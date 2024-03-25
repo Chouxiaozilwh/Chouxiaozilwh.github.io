@@ -6,17 +6,19 @@
   
   <title>SQL Server | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="创建数据库 利用SQL语句(命令方式)创建数据库student，所有文件存放在D:\db文件夹中。 要求：主数据文件20MB,最大尺寸为70MB，文件增长率为10%， 日志文件为5MB，最大尺寸10MB，文件增长为1MB， 次数据文件20MB,最大尺寸为50MB，文件增长率为10%。   12345678910111213141516171819202122create database stud">
+  <meta name="description" content="SQL ServerDDL（Data Definition Language，数据定义语言） DDL（数据定义语言）是一种用于创建和修改数据库对象（如表、索引和用户）的语法。DDL 语句类似于用于定义数据结构（尤其是数据库模式）的计算机编程语言。DDL 语句的常见示例包括 CREATE 、 ALTER 和 DROP 。  创建数据库 利用SQL语句(命令方式)创建数据库student，所有文件存放">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL Server">
 <meta property="og:url" content="http://example.com/2024/03/11/SQLServer/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="创建数据库 利用SQL语句(命令方式)创建数据库student，所有文件存放在D:\db文件夹中。 要求：主数据文件20MB,最大尺寸为70MB，文件增长率为10%， 日志文件为5MB，最大尺寸10MB，文件增长为1MB， 次数据文件20MB,最大尺寸为50MB，文件增长率为10%。   12345678910111213141516171819202122create database stud">
+<meta property="og:description" content="SQL ServerDDL（Data Definition Language，数据定义语言） DDL（数据定义语言）是一种用于创建和修改数据库对象（如表、索引和用户）的语法。DDL 语句类似于用于定义数据结构（尤其是数据库模式）的计算机编程语言。DDL 语句的常见示例包括 CREATE 、 ALTER 和 DROP 。  创建数据库 利用SQL语句(命令方式)创建数据库student，所有文件存放">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/image-20240311214447220.png">
 <meta property="article:published_time" content="2024-03-11T14:47:58.833Z">
-<meta property="article:modified_time" content="2024-03-12T01:56:10.092Z">
+<meta property="article:modified_time" content="2024-03-25T16:54:42.816Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/image-20240311214447220.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -93,7 +95,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><ul>
+        <h1 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a>SQL Server</h1><h2 id="DDL（Data-Definition-Language，数据定义语言）"><a href="#DDL（Data-Definition-Language，数据定义语言）" class="headerlink" title="DDL（Data Definition Language，数据定义语言）"></a>DDL（Data Definition Language，数据定义语言）</h2><blockquote>
+<p>DDL（数据定义语言）是一种用于创建和修改数据库对象（如表、索引和用户）的语法。DDL 语句类似于用于定义数据结构（尤其是数据库模式）的计算机编程语言。DDL 语句的常见示例包括 CREATE 、 ALTER 和 DROP 。</p>
+</blockquote>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><ul>
 <li><p>利用SQL语句(命令方式)<strong>创建数据库</strong>student，所有文件存放在D:\db文件夹中。</p>
 <p>要求：主数据文件20MB,最大尺寸为70MB，文件增长率为10%，</p>
 <p>日志文件为5MB，最大尺寸10MB，文件增长为1MB，</p>
@@ -109,7 +114,7 @@
 <p>例如，<code>N&#39;课程管理_Data&#39;</code> 中的 <code>N</code> 前缀表示 <code>&#39;课程管理_Data&#39;</code> 是一个 Unicode 字符串，可以包含中文字符。</p>
 <p>在创建数据库时，使用 <code>NAME = N&#39;student_Data&#39;</code> 的目的是确保数据库文件的逻辑名称是一个 Unicode 字符串，以适应可能包含非英文字符的情况。</p>
 </blockquote>
-<h2 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h2><ul>
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><ul>
 <li>用SQL语句命令方式<strong>修改数据库</strong>student的主数据文件大小为10mb</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> database student modify file(name <span class="operator">=</span> <span class="string">&#x27;student&#x27;</span>, size <span class="operator">=</span> <span class="number">10</span>mb);</span><br></pre></td></tr></table></figure>
@@ -146,14 +151,235 @@
 </ol>
 </li>
 </ul>
-<h2 id="使用-SQL-Server-将数据库设置为读写。"><a href="#使用-SQL-Server-将数据库设置为读写。" class="headerlink" title="使用 SQL Server 将数据库设置为读写。"></a><strong>使用 SQL Server 将数据库设置为读写。</strong></h2><ol>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法</span></span><br><span class="line"><span class="comment">-- drop database [if exists] 表名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> database if <span class="keyword">exists</span> sc;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="使用-SQL-Server-将数据库设置为读写。"><a href="#使用-SQL-Server-将数据库设置为读写。" class="headerlink" title="使用 SQL Server 将数据库设置为读写。"></a>使用 SQL Server 将数据库设置为读写。</h3><p><img src="/assets/image-20240311214447220.png" alt="image-20240311214447220"></p>
+<ol>
 <li>确认执行此过程的用户帐户是每个数据库中的 <strong>db_owner</strong> 固定数据库角色的成员。</li>
 <li>启动 SQL Server Management Studio。</li>
 <li>右键单击要设置为只读的内容数据库，然后单击“属性”。</li>
 <li>选择“选项”页，然后在“其他选项”列表中，滚动至“状态”部分。</li>
 <li>在“只读数据库”行中，单击“True”旁边的箭头，选择“False”，然后单击“确定”。</li>
 </ol>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><ul>
+<li>创建 student（学生）、course（选课）、sc（成绩） 表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	Sno <span class="type">char</span>(<span class="number">9</span>) <span class="keyword">primary</span> key,	<span class="comment">-- 学生学号</span></span><br><span class="line">	Sname <span class="type">char</span>(<span class="number">6</span>) <span class="keyword">not</span> <span class="keyword">null</span>,		<span class="comment">-- 姓名</span></span><br><span class="line">	Ssex <span class="type">char</span>(<span class="number">2</span>),				<span class="comment">-- 性别</span></span><br><span class="line">	Sage <span class="type">int</span>,					<span class="comment">-- 年龄</span></span><br><span class="line">	Sdept <span class="type">varchar</span>(<span class="number">20</span>)			<span class="comment">-- 所在院系</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> course(</span><br><span class="line">	Cno <span class="type">char</span>(<span class="number">4</span>) <span class="keyword">primary</span> key,					<span class="comment">-- 课程编号</span></span><br><span class="line">	Cname <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span>,					<span class="comment">-- 课程名称</span></span><br><span class="line">	Cpno <span class="type">char</span>(<span class="number">4</span>),								<span class="comment">-- 先修课程号</span></span><br><span class="line">	Ccredit <span class="type">Int</span>,								<span class="comment">-- 课程学分</span></span><br><span class="line">	<span class="keyword">foreign</span> key(Cpno) <span class="keyword">references</span> course(Cno)	<span class="comment">-- 外键，参考 Cno 取值</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> sc(</span><br><span class="line">	Sno <span class="type">char</span>(<span class="number">9</span>),</span><br><span class="line">	Cno <span class="type">char</span>(<span class="number">4</span>),</span><br><span class="line">	Grade <span class="type">float</span>,</span><br><span class="line">	<span class="keyword">primary</span> key(sno, cno),						<span class="comment">-- 将 sno、cno 共同作为一个主键</span></span><br><span class="line">	<span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> student(Sno),	<span class="comment">-- 外键，参考 student.Sno 取值</span></span><br><span class="line">	<span class="keyword">foreign</span> key(cno) <span class="keyword">references</span> course(Cno)		<span class="comment">-- 外键，参考 student.Cno 取值</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
+
+
+<table>
+<thead>
+<tr>
+<th>约束类型</th>
+<th align="left">介绍</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>not null</td>
+<td align="left">非空</td>
+<td align="left">指示某列不能存储 NULL 值</td>
+</tr>
+<tr>
+<td>unique</td>
+<td align="left">惟一</td>
+<td align="left">保证某列的每行必须有唯一的值</td>
+</tr>
+<tr>
+<td>primary key</td>
+<td align="left">主键<br />（一个表最多只能有一个主键，但是一个主键可以包含多个字段）</td>
+<td align="left">NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录</td>
+</tr>
+<tr>
+<td>foreign key</td>
+<td align="left">外键</td>
+<td align="left">保证一个表中的数据匹配另一个表中的值的参照完整性</td>
+</tr>
+<tr>
+<td>check</td>
+<td align="left">约束</td>
+<td align="left">保证列中的值符合指定的条件</td>
+</tr>
+<tr>
+<td>default</td>
+<td align="left">默认</td>
+<td align="left">规定没有给列赋值时的默认值</td>
+</tr>
+</tbody></table>
+<h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><ul>
+<li>向表中添加约束</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法</span></span><br><span class="line"><span class="comment">-- alter table 表名 add constraint 约束名 约束</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> sc <span class="keyword">add</span> <span class="keyword">constraint</span> CHK_Grade <span class="keyword">check</span>(Grade <span class="operator">&gt;=</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> <span class="keyword">constraint</span> CHK_sdept <span class="keyword">check</span>(sdept <span class="keyword">in</span> (<span class="string">&#x27;中医系&#x27;</span>, <span class="string">&#x27;中药系&#x27;</span>, <span class="string">&#x27;信息系&#x27;</span>, <span class="string">&#x27;人文系&#x27;</span>, <span class="string">&#x27;经济系&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于外键约束，每个操作的外键约束都要单独设置，如 delete、update 等所有涉及到外键约束的操作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> sc <span class="keyword">add</span> <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> student(Sno) <span class="keyword">on</span> <span class="keyword">delete</span> cascade;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> sc <span class="keyword">add</span> <span class="keyword">foreign</span> key(cno) <span class="keyword">references</span> course(Cno) <span class="keyword">on</span> <span class="keyword">delete</span> cascade;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>外键约束</th>
+<th>介绍</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>no action</td>
+<td>拒绝（默认）</td>
+<td>无操作：如果检查约束时仍存在任何引用行，则会引发错误。如果未指定任何内容，则这是默认行为。从本质上讲，如果有引用父表的子行，它可以防止从父表中删除它。</td>
+</tr>
+<tr>
+<td>cascade</td>
+<td>级联</td>
+<td>如果删除了父行，则所有相应的子行也会自动删除。</td>
+</tr>
+<tr>
+<td>set null</td>
+<td>设置为空</td>
+<td>如果删除父行，则子行中的外键列设置为 NULL。</td>
+</tr>
+</tbody></table>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 语法</span></span><br><span class="line"><span class="comment">-- drop table [if exists] 表名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> sc;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="DML（Data-Manipulation-Language，-数据操作语言）"><a href="#DML（Data-Manipulation-Language，-数据操作语言）" class="headerlink" title="DML（Data Manipulation Language， 数据操作语言）"></a>DML（Data Manipulation Language， 数据操作语言）</h2><h2 id="DQL（Data-Query-Language，-数据查询语句）"><a href="#DQL（Data-Query-Language，-数据查询语句）" class="headerlink" title="DQL（Data Query Language， 数据查询语句）"></a>DQL（Data Query Language， 数据查询语句）</h2><p>数据查询语言（Data Query Language, DQL）是用于从数据库或信息系统中查询数据的计算机语言</p>
+<h3 id="查询数据语法"><a href="#查询数据语法" class="headerlink" title="查询数据语法"></a>查询数据语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="operator">&lt;</span>字段<span class="number">1</span> , 字段<span class="number">2</span> ...<span class="operator">&gt;</span> </span><br><span class="line">	[聚合函数(<span class="built_in">count</span>() <span class="keyword">as</span> 别名<span class="number">1</span>, <span class="built_in">max</span>() <span class="keyword">as</span> 别名<span class="number">2</span>, <span class="built_in">min</span>(), <span class="built_in">avg</span>(), <span class="built_in">sum</span>() ...)]</span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表<span class="operator">&gt;</span></span><br><span class="line">[<span class="keyword">join</span> <span class="operator">&lt;</span>表<span class="number">2</span><span class="operator">&gt;</span> <span class="keyword">on</span> 表<span class="number">2.</span>字段 <span class="operator">=</span> 表.字段]</span><br><span class="line">[<span class="keyword">where</span> 条件判断]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span> 分组字段]</span><br><span class="line">[<span class="keyword">having</span> 条件判断]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span> [<span class="keyword">asc</span> <span class="operator">/</span> <span class="keyword">desc</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="查询条件"><a href="#查询条件" class="headerlink" title="查询条件"></a>查询条件</h3><ul>
+<li><p>&lt;字段1, 字段2, 字段3 …&gt;</p>
+<p>查询后需要返回的字段，* 表示全部字段</p>
+<p>如果查询的多张表中由有重名字段，需要通过 表名.字段 的方式指定字段</p>
+</li>
+<li><p>聚合函数 count(), max(), min() …</p>
+<p>聚合函数计算一组值并返回单个值</p>
+<table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count(字段)</td>
+<td>返回该字段的行数</td>
+</tr>
+<tr>
+<td>max(字段)</td>
+<td>返回该字段中的最大值</td>
+</tr>
+<tr>
+<td>min(字段)</td>
+<td>返回该字段中的最小值</td>
+</tr>
+<tr>
+<td>avg(字段)</td>
+<td>返回该字段值的平均值</td>
+</tr>
+<tr>
+<td>sum(字段)</td>
+<td>返回该字段中值的总和，sum() 中可以加条件判断</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按课程号降序显示选修各个课程的总人数、最高分、最低分和平均分。</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	course.Cno, </span><br><span class="line">	<span class="built_in">count</span>(course.Cno) <span class="keyword">as</span> <span class="string">&#x27;count_Cno&#x27;</span>, </span><br><span class="line">	<span class="built_in">max</span>(Grade) <span class="keyword">as</span> <span class="string">&#x27;max_Grade&#x27;</span>, </span><br><span class="line">	<span class="built_in">min</span>(Grade) <span class="keyword">as</span> <span class="string">&#x27;min_Grade&#x27;</span>, </span><br><span class="line">	<span class="built_in">avg</span>(Grade) <span class="keyword">as</span> <span class="string">&#x27;average_Grade&#x27;</span></span><br><span class="line"><span class="keyword">from</span> course</span><br><span class="line"><span class="keyword">join</span> sc <span class="keyword">on</span> sc.Cno <span class="operator">=</span> course.Cno</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> course.Cno</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> course.Cno <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询各门课程的选修及格人数、及格比率。</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	course.Cno, </span><br><span class="line">	<span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> Grade <span class="operator">&gt;=</span> <span class="number">60</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> pass_nums,</span><br><span class="line">	<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> all_nums,</span><br><span class="line">	round(<span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> Grade <span class="operator">&gt;=</span> <span class="number">60</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="operator">/</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">*</span> <span class="number">100</span>, <span class="number">2</span>) <span class="keyword">as</span> pass_rate</span><br><span class="line"><span class="keyword">from</span> course</span><br><span class="line"><span class="keyword">join</span> sc <span class="keyword">on</span> sc.Cno <span class="operator">=</span> course.Cno</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> course.Cno;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>join … on …</p>
+<p>join 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询所有学生的数据库原理与应用课程成绩信息，展示学号、姓名、所在系、课程名称和成绩。</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	student.Sno, Sname, Sdept, Cname, Grade </span><br><span class="line"><span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">join</span> sc <span class="keyword">on</span> sc.Sno <span class="operator">=</span> student.Sno</span><br><span class="line"><span class="keyword">join</span> course <span class="keyword">on</span> course.Cno <span class="operator">=</span> sc.Cno</span><br><span class="line"><span class="keyword">where</span> Cname <span class="operator">=</span> <span class="string">&#x27;数据库原理&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>where 条件判断</p>
+<p>where 子句用于提取那些满足指定条件的记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 3、按照课程号、成绩降序显示课程成绩在70到80之间的学生学号、课程号及成绩。</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">from</span> sc </span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">	Grade <span class="keyword">between</span> <span class="number">70</span> <span class="keyword">and</span> <span class="number">80</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">	Cno, Grade <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>where 子句必须在 group by 分组前使用</p>
+</li>
+<li><p>where 不能使用聚合函数</p>
+</li>
+</ul>
+</li>
+<li><p>group by 分组字段</p>
+<p>group by 语句用于结合聚合函数，根据一个或多个列对结果集进行分组。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计各院系学生人数。</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	Sdept, <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> count_nums</span><br><span class="line"><span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Sdept</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>having 条件判断</p>
+<p>在 SQL 中增加 having 子句原因是，where 关键字无法与聚合函数一起使用。</p>
+<p>having 子句可以让我们筛选分组后的各组数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 显示平均成绩大于“S0001”学生平均成绩的各个学生的学号、平均成绩。</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	Sno, <span class="built_in">avg</span>(Grade) <span class="keyword">as</span> <span class="string">&#x27;average_Grade&#x27;</span></span><br><span class="line"><span class="keyword">from</span> sc</span><br><span class="line"><span class="keyword">where</span> Sno <span class="operator">&lt;&gt;</span> <span class="string">&#x27;S0001&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Sno</span><br><span class="line"><span class="keyword">having</span> </span><br><span class="line">	<span class="built_in">avg</span>(Grade) <span class="operator">&gt;</span> (<span class="keyword">select</span> <span class="built_in">avg</span>(Grade) <span class="keyword">from</span> sc <span class="keyword">where</span> Sno <span class="operator">=</span> <span class="string">&#x27;S0001&#x27;</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- 列出有两门以上课程（含两门）不及格的学生的学号及该学生的平均成绩。</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	Sno,</span><br><span class="line">	<span class="built_in">avg</span>(Grade) <span class="keyword">as</span> average_Grade</span><br><span class="line"><span class="keyword">from</span> sc</span><br><span class="line"><span class="keyword">where</span> grade <span class="operator">&lt;</span> <span class="number">60</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Sno</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">&gt;=</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>having 可以使用聚合函数</li>
+<li>having 可以在 group by 分组后使用</li>
+</ul>
+</li>
+<li><p>order by &lt;字段&gt; asc&#x2F;desc</p>
+<p>按照字段 升序（默认） &#x2F; 降序 排列</p>
+</li>
+</ul>
+<h3 id="条件判断中的运算符"><a href="#条件判断中的运算符" class="headerlink" title="条件判断中的运算符"></a>条件判断中的运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&gt;<br />&gt;&#x3D;</td>
+<td>大于<br />大于等于</td>
+</tr>
+<tr>
+<td>&lt;<br />&lt;&#x3D;</td>
+<td>小于<br />小于等于</td>
+</tr>
+<tr>
+<td>between a and b</td>
+<td>在 [a, b] 中</td>
+</tr>
+<tr>
+<td>like</td>
+<td>模糊匹配</td>
+</tr>
+<tr>
+<td>in</td>
+<td>在里面</td>
+</tr>
+</tbody></table>
+<h2 id="DCL（Data-Control-Language，-数据控制语言）"><a href="#DCL（Data-Control-Language，-数据控制语言）" class="headerlink" title="DCL（Data Control Language， 数据控制语言）"></a>DCL（Data Control Language， 数据控制语言）</h2>
       
     </div>
     <footer class="article-footer">
